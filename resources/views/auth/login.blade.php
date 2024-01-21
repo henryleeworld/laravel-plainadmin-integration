@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <div class="input-style-1">
                             <label for="email">{{ __('Email') }}</label>
-                            <input @error('email') class="form-control is-invalid" @enderror type="email" name="email" id="email" placeholder="{{ __('Email') }}" required autocomplete="email" autofocus>
+                            <input @error('email') class="form-control is-invalid" @enderror type="email" name="email" id="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required autocomplete="email" autofocus>
 							@error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
