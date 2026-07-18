@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Artisan;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
 
 class PermissionSeed extends Seeder
 {
@@ -14,7 +15,7 @@ class PermissionSeed extends Seeder
     public function run(): void
     {
         Artisan::call('cache:clear');
-        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
         
         Permission::create(['name' => 'users_manage']);
     }
