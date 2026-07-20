@@ -50,7 +50,7 @@
                     <div class="col-12">
                         <div class="input-style-1">
                             <label for="password">{{ __('New password') }}</label>
-                            <input type="password" @error('password') class="form-control is-invalid" @enderror name="password" id="password" placeholder="{{ __('New password') }}" required>
+                            <input type="password" @error('password') class="form-control is-invalid" @enderror name="password" id="password" placeholder="{{ __('New password') }}" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required>
 							@error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
                     <div class="col-12">
                         <div class="input-style-1">
                             <label for="password_confirmation">{{ __('New password confirmation') }}</label>
-                            <input type="password" @error('password') class="form-control is-invalid" @enderror name="password_confirmation" id="password_confirmation" placeholder="{{ __('New password confirmation') }}" required>
+                            <input type="password" @error('password') class="form-control is-invalid" @enderror name="password_confirmation" id="password_confirmation" placeholder="{{ __('New password confirmation') }}" passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}" required>
                         </div>
                     </div>
                     <div class="col-12">
